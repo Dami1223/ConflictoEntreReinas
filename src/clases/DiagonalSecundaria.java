@@ -1,6 +1,6 @@
 package clases;
 
-public class DiagonalSecundaria implements Operacion{
+public class DiagonalSecundaria implements Operacion {
 
 	private Operacion siguiente;
 
@@ -25,7 +25,7 @@ public class DiagonalSecundaria implements Operacion{
 	@Override
 	public void establecerSiguiente(Operacion operacion) {
 		this.siguiente = operacion;
-		
+
 	}
 
 }

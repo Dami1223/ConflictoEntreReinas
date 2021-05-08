@@ -1,8 +1,5 @@
 package clases;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Fila implements Operacion {
 
 	private Operacion siguiente;

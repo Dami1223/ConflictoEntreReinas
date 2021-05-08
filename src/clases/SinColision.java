@@ -1,6 +1,6 @@
 package clases;
 
-public class SinColision implements Operacion{
+public class SinColision implements Operacion {
 
 	@Override
 	public boolean comprobarColicion(Reina uno, Reina dos) {

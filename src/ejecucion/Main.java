@@ -15,8 +15,8 @@ public class Main {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 
-		String pathEntrada = "conflictos.in";
-		String pathSalida = "conflictos.out";
+		String pathEntrada = "conflictosFatiga.in";
+		String pathSalida = "conflictosFatiga.out";
 
 		List<Reina> listaDeReinas = ejecutar(pathEntrada, pathSalida);
 
@@ -35,13 +35,14 @@ public class Main {
 		columna.establecerSiguiente(diagonalPrincipal);
 		diagonalPrincipal.establecerSiguiente(diagonalSecundaria);
 		diagonalSecundaria.establecerSiguiente(new SinColision());
-
+		int contador = 0;
 		for (int i = 0; i < listaDeReinas.size() - 1; i++) {
 			for (int j = i + 1; j < listaDeReinas.size(); j++) {
 				fila.comprobarColicion(listaDeReinas.get(i), listaDeReinas.get(j));
+				contador++;
 			}
 		}
-
+		System.out.println("Iteraciones:"+contador);
 		EntradaSalida.escribir(pathSalida, listaDeReinas);
 		return listaDeReinas;
 

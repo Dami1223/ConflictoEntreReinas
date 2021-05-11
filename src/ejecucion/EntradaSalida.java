@@ -14,6 +14,16 @@ import clases.Reina;
 public class EntradaSalida {
 
 	private static int tamañoTablero;
+	
+	public static void escribirEntradaFatiga(List<Reina> listaReinas, String pathEntrada) throws FileNotFoundException {
+		File archivoSalida = new File(pathEntrada);
+		PrintWriter pwOut = new PrintWriter(archivoSalida);
+		
+		for (Reina reina : listaReinas) {
+			pwOut.write(String.format("%d %d\n",reina.getFila(),reina.getColumna()));
+		}
+		pwOut.close();
+	}
 
 	public static void escribir(String pathSalida, List<Reina> reinas) throws FileNotFoundException {
 		File archivoSalida = new File(pathSalida);

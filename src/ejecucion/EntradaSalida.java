@@ -1,4 +1,4 @@
-package clases;
+package ejecucion;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
+
+import clases.Reina;
 
 public class EntradaSalida {
 

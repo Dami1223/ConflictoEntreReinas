@@ -35,14 +35,17 @@ public class Main {
 		columna.establecerSiguiente(diagonalPrincipal);
 		diagonalPrincipal.establecerSiguiente(diagonalSecundaria);
 		diagonalSecundaria.establecerSiguiente(new SinColision());
-		int contador = 0;
+
+		int iteraciones = 0;
+
 		for (int i = 0; i < listaDeReinas.size() - 1; i++) {
 			for (int j = i + 1; j < listaDeReinas.size(); j++) {
 				fila.comprobarColicion(listaDeReinas.get(i), listaDeReinas.get(j));
-				contador++;
+				iteraciones++;
 			}
 		}
-		System.out.println("Iteraciones:"+contador);
+		System.out.println("Iteraciones: " + iteraciones);
+		System.out.println("Reinas^2: " + Math.pow(2, listaDeReinas.size()));
 		EntradaSalida.escribir(pathSalida, listaDeReinas);
 		return listaDeReinas;
 

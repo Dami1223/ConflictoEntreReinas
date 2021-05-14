@@ -48,7 +48,7 @@ public class Colision {
 		if (this.arribaDerecha == null) {
 			this.arribaDerecha = reina;
 			colisiones++;
-		} else if (this.arribaDerecha.getFila() > reina.getFila())
+		} else if (this.arribaDerecha.getFila() < reina.getFila())
 			this.arribaDerecha = reina;
 	}
 

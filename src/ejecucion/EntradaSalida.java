@@ -18,7 +18,7 @@ public class EntradaSalida {
 	public static void escribirEntradaFatiga(List<Reina> listaReinas, String pathEntrada) throws FileNotFoundException {
 		File archivoSalida = new File(pathEntrada);
 		PrintWriter pwOut = new PrintWriter(archivoSalida);
-		
+		pwOut.write(String.format("%d %d\n",(int) Math.sqrt(listaReinas.size()),listaReinas.size()));
 		for (Reina reina : listaReinas) {
 			pwOut.write(String.format("%d %d\n",reina.getFila(),reina.getColumna()));
 		}
@@ -50,6 +50,11 @@ public class EntradaSalida {
 		}
 		sc.close();
 		return listaReinas;
+		
+	}
+
+	public static int getTamañoTablero() {
+		return tamañoTablero;
 	}
 
 }

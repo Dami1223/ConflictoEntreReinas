@@ -30,7 +30,7 @@ public class EntradaSalida {
 		PrintWriter pwOut = new PrintWriter(archivoSalida);
 
 		for (Reina reina : reinas) {
-			pwOut.write(reina.getColisiones().toString() + "");
+			pwOut.write(reina.getColisiones().toString() + "\n");
 		}
 		pwOut.close();
 	}

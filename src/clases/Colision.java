@@ -1,5 +1,9 @@
 package clases;
 
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
 public class Colision {
 
 	private Reina derecha;
@@ -10,12 +14,12 @@ public class Colision {
 	private Reina arribaIzquierda;
 	private Reina abajoDerecha;
 	private Reina abajoIzquierda;
-	private int colisiones;
+	private int cantidadColisiones;
 
 	public void setDerecha(Reina reina) {
 		if (this.derecha == null) {
 			this.derecha = reina;
-			colisiones++;
+			cantidadColisiones++;
 		} else if (this.derecha.getColumna() > reina.getColumna())
 			this.derecha = reina;
 	}
@@ -23,7 +27,7 @@ public class Colision {
 	public void setIzquierda(Reina reina) {
 		if (this.izquierda == null) {
 			this.izquierda = reina;
-			colisiones++;
+			cantidadColisiones++;
 		} else if (this.izquierda.getColumna() < reina.getColumna())
 			this.izquierda = reina;
 	}
@@ -31,7 +35,7 @@ public class Colision {
 	public void setArriba(Reina reina) {
 		if (this.arriba == null) {
 			this.arriba = reina;
-			colisiones++;
+			cantidadColisiones++;
 		} else if (this.arriba.getFila() < reina.getFila())
 			this.arriba = reina;
 	}
@@ -39,7 +43,7 @@ public class Colision {
 	public void setAbajo(Reina reina) {
 		if (this.abajo == null) {
 			this.abajo = reina;
-			colisiones++;
+			cantidadColisiones++;
 		} else if (this.abajo.getFila() > reina.getFila())
 			this.abajo = reina;
 	}
@@ -47,7 +51,7 @@ public class Colision {
 	public void setArribaDerecha(Reina reina) {
 		if (this.arribaDerecha == null) {
 			this.arribaDerecha = reina;
-			colisiones++;
+			cantidadColisiones++;
 		} else if (this.arribaDerecha.getFila() < reina.getFila())
 			this.arribaDerecha = reina;
 	}
@@ -55,7 +59,7 @@ public class Colision {
 	public void setArribaIzquierda(Reina reina) {
 		if (this.arribaIzquierda == null) {
 			this.arribaIzquierda = reina;
-			colisiones++;
+			cantidadColisiones++;
 		} else if (this.arribaIzquierda.getColumna() < reina.getColumna())
 			this.arribaIzquierda = reina;
 	}
@@ -63,7 +67,7 @@ public class Colision {
 	public void setAbajoDerecha(Reina reina) {
 		if (this.abajoDerecha == null) {
 			this.abajoDerecha = reina;
-			colisiones++;
+			cantidadColisiones++;
 		} else if (this.abajoDerecha.getColumna() > reina.getColumna())
 			this.abajoDerecha = reina;
 	}
@@ -71,24 +75,39 @@ public class Colision {
 	public void setAbajoIzquierda(Reina reina) {
 		if (this.abajoIzquierda == null) {
 			this.abajoIzquierda = reina;
-			colisiones++;
+			cantidadColisiones++;
 		} else if (this.abajoIzquierda.getColumna() < reina.getColumna())
 			this.abajoIzquierda = reina;
 	}
 
 	@Override
 	public String toString() {
+		List<Integer> listaReinas = new LinkedList<Integer>();
 
-		String resultado = "" + colisiones + " ";
-		resultado += (derecha == null ? "" : derecha.getNumero()) + " ";
-		resultado += (izquierda == null ? "" : izquierda.getNumero()) + " ";
-		resultado += (arriba == null ? "" : arriba.getNumero() + " ") + " ";
-		resultado += (abajo == null ? "" : abajo.getNumero()) + " ";
-		resultado += (arribaDerecha == null ? "" : arribaDerecha.getNumero()) + " ";
-		resultado += (arribaIzquierda == null ? "" : arribaIzquierda.getNumero()) + " ";
-		resultado += (abajoDerecha == null ? "" : abajoDerecha.getNumero()) + " ";
-		resultado += (abajoIzquierda == null ? "" : abajoIzquierda.getNumero());
-		return resultado.trim().replaceAll("\\s+", " ") + "\n";
+		String resultado = "" + cantidadColisiones;
+		if (derecha != null)
+			listaReinas.add(derecha.getNumero());
+		if (izquierda != null)
+			listaReinas.add(izquierda.getNumero());
+		if (abajo != null)
+			listaReinas.add(abajo.getNumero());
+		if (arriba != null)
+			listaReinas.add(arriba.getNumero());
+		if (arribaIzquierda != null)
+			listaReinas.add(arribaIzquierda.getNumero());
+		if (arribaDerecha != null)
+			listaReinas.add(arribaDerecha.getNumero());
+		if (abajoDerecha != null)
+			listaReinas.add(abajoDerecha.getNumero());
+		if (abajoIzquierda != null)
+			listaReinas.add(abajoIzquierda.getNumero());
+
+		listaReinas.sort(null);
+		for (Integer nroReina : listaReinas) {
+			resultado += " " + nroReina;
+		}
+
+		return resultado;
 	}
 
 }

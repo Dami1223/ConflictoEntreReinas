@@ -22,13 +22,16 @@ import ejecucion.Main;
 
 @DisplayName("Lote de Prueba")
 class ReinaTest {
+	private final String rutaSalidaEsperada = "LoteDePrueba\\SalidaEsperada\\";
+	private final String rutaSalida = "LoteDePrueba\\Salida\\";
+	private final String rutaEntrada = "LoteDePrueba\\Entrada\\";
 
 	@Test
 	@DisplayName("Caso del Enunciado")
 	void EnunciadoTest() throws NumberFormatException, IOException {
-		String pathSalidaEsperada = "conflictosEsperados.out";
-		String pathEntrada = "conflictos.in";
-		String pathSalida = "conflictos.out";
+		String pathSalidaEsperada = rutaSalidaEsperada + "Caso00_Enunciado.out";
+		String pathEntrada = rutaEntrada + "Caso00_Enunciado.in";
+		String pathSalida = rutaSalida + "Caso00_Enunciado.out";
 
 		Main.ejecutar(pathEntrada, pathSalida);
 		compararArchivosSalida(pathSalidaEsperada, pathSalida);
@@ -37,9 +40,10 @@ class ReinaTest {
 	@Test
 	@DisplayName("Caso de Fatiga")
 	void fatigaTest() throws NumberFormatException, IOException {
-		String pathEntrada = "conflictosFatiga.in";
-		String pathSalida = "conflictosFatiga.out";
-		String pathSalidaEsperada = "conflictosFatigaEsperado.out";
+		String nombreCaso = "CasoFatiga";
+		String pathSalidaEsperada = rutaSalidaEsperada + nombreCaso + ".out";
+		String pathEntrada = rutaEntrada + nombreCaso + ".in";
+		String pathSalida = rutaSalida + nombreCaso + ".out";
 		EntradaSalida.escribirEntradaFatiga(generarFatiga(), pathEntrada);
 
 		Main.ejecutar(pathEntrada, pathSalida);
@@ -48,6 +52,102 @@ class ReinaTest {
 		compararArchivosSalida(pathSalidaEsperada, pathSalida);
 	}
 
+	@Test
+	@DisplayName("Caso 01")
+	void Caso01Test() throws NumberFormatException, IOException {
+		String nombreCaso = "Caso01_arriba-abajo";
+		String pathSalidaEsperada = rutaSalidaEsperada + nombreCaso + ".out";
+		String pathEntrada = rutaEntrada + nombreCaso + ".in";
+		String pathSalida = rutaSalida + nombreCaso + ".out";
+
+		Main.ejecutar(pathEntrada, pathSalida);
+		compararArchivosSalida(pathSalidaEsperada, pathSalida);
+	}
+
+	@Test
+	@DisplayName("Caso 02")
+	void Caso02Test() throws NumberFormatException, IOException {
+		String nombreCaso = "Caso02_izq-der";
+		String pathSalidaEsperada = rutaSalidaEsperada + nombreCaso + ".out";
+		String pathEntrada = rutaEntrada + nombreCaso + ".in";
+		String pathSalida = rutaSalida + nombreCaso + ".out";
+
+		Main.ejecutar(pathEntrada, pathSalida);
+		compararArchivosSalida(pathSalidaEsperada, pathSalida);
+	}
+	
+	@Test
+	@DisplayName("Caso 03")
+	void Caso03Test() throws NumberFormatException, IOException {
+		String nombreCaso = "Caso03_diag-principal";
+		String pathSalidaEsperada = rutaSalidaEsperada + nombreCaso + ".out";
+		String pathEntrada = rutaEntrada + nombreCaso + ".in";
+		String pathSalida = rutaSalida + nombreCaso + ".out";
+
+		Main.ejecutar(pathEntrada, pathSalida);
+		compararArchivosSalida(pathSalidaEsperada, pathSalida);
+	}
+	
+	@Test
+	@DisplayName("Caso 04")
+	void Caso04Test() throws NumberFormatException, IOException {
+		String nombreCaso = "Caso04_diag-secundaria";
+		String pathSalidaEsperada = rutaSalidaEsperada + nombreCaso + ".out";
+		String pathEntrada = rutaEntrada + nombreCaso + ".in";
+		String pathSalida = rutaSalida + nombreCaso + ".out";
+
+		Main.ejecutar(pathEntrada, pathSalida);
+		compararArchivosSalida(pathSalidaEsperada, pathSalida);
+	}
+
+	@Test
+	@DisplayName("Caso 05")
+	void Caso05Test() throws NumberFormatException, IOException {
+		String nombreCaso = "Caso05_arriba-abajo-repetido";
+		String pathSalidaEsperada = rutaSalidaEsperada + nombreCaso + ".out";
+		String pathEntrada = rutaEntrada + nombreCaso + ".in";
+		String pathSalida = rutaSalida + nombreCaso + ".out";
+
+		Main.ejecutar(pathEntrada, pathSalida);
+		compararArchivosSalida(pathSalidaEsperada, pathSalida);
+	}
+	
+	@Test
+	@DisplayName("Caso 06")
+	void Caso06Test() throws NumberFormatException, IOException {
+		String nombreCaso = "Caso06_izq-der-repetido";
+		String pathSalidaEsperada = rutaSalidaEsperada + nombreCaso + ".out";
+		String pathEntrada = rutaEntrada + nombreCaso + ".in";
+		String pathSalida = rutaSalida + nombreCaso + ".out";
+
+		Main.ejecutar(pathEntrada, pathSalida);
+		compararArchivosSalida(pathSalidaEsperada, pathSalida);
+	}
+	
+	@Test
+	@DisplayName("Caso 07")
+	void Caso07Test() throws NumberFormatException, IOException {
+		String nombreCaso = "Caso07_diag-principal-repetido";
+		String pathSalidaEsperada = rutaSalidaEsperada + nombreCaso + ".out";
+		String pathEntrada = rutaEntrada + nombreCaso + ".in";
+		String pathSalida = rutaSalida + nombreCaso + ".out";
+
+		Main.ejecutar(pathEntrada, pathSalida);
+		compararArchivosSalida(pathSalidaEsperada, pathSalida);
+	}
+	
+	@Test
+	@DisplayName("Caso 08")
+	void Caso08Test() throws NumberFormatException, IOException {
+		String nombreCaso = "Caso08_diag-secundaria-repetido";
+		String pathSalidaEsperada = rutaSalidaEsperada + nombreCaso + ".out";
+		String pathEntrada = rutaEntrada + nombreCaso + ".in";
+		String pathSalida = rutaSalida + nombreCaso + ".out";
+
+		Main.ejecutar(pathEntrada, pathSalida);
+		compararArchivosSalida(pathSalidaEsperada, pathSalida);
+	}
+	
 	private void compararArchivosSalida(String pathSalidaEsperada, String pathSalida)
 			throws FileNotFoundException, IOException {
 		BufferedReader brSalida = new BufferedReader(new FileReader(new File(pathSalida)));

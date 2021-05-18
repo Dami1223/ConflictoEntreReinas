@@ -43,7 +43,7 @@ class ReinaTest {
 		String pathSalidaEsperada = rutaSalidaEsperada + nombreCaso + ".out";
 		String pathEntrada = rutaEntrada + nombreCaso + ".in";
 		String pathSalida = rutaSalida + nombreCaso + ".out";
-//		EntradaSalida.escribirEntradaFatiga(generarFatiga(), pathEntrada);
+		EntradaSalida.escribirEntradaFatiga(generarFatiga(), pathEntrada);
 
 		Main.ejecutar(pathEntrada, pathSalida);
 		EntradaSalida.escribir(pathSalidaEsperada, generarFatigaSalidaEsperada());

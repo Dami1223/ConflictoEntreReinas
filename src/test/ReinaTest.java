@@ -28,9 +28,10 @@ class ReinaTest {
 	@Test
 	@DisplayName("Caso del Enunciado")
 	void EnunciadoTest() throws NumberFormatException, IOException {
-		String pathSalidaEsperada = rutaSalidaEsperada + "Caso00_Enunciado.out";
-		String pathEntrada = rutaEntrada + "Caso00_Enunciado.in";
-		String pathSalida = rutaSalida + "Caso00_Enunciado.out";
+		String nombreCaso = "Caso00_Enunciado";
+		String pathSalidaEsperada = rutaSalidaEsperada + nombreCaso + ".out";
+		String pathEntrada = rutaEntrada + nombreCaso + ".in";
+		String pathSalida = rutaSalida + nombreCaso + ".out";
 
 		Main.ejecutar(pathEntrada, pathSalida);
 		compararArchivosSalida(pathSalidaEsperada, pathSalida);
